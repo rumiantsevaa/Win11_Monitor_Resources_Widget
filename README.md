@@ -25,7 +25,11 @@
 
 
 # Code Overview
-* main.py
+
+* ## main.py
+
+![image](https://github.com/user-attachments/assets/dafac233-30ab-4355-98c3-d6fcb48fb4f4)
+
 
 This file contains functions to:
 
@@ -36,7 +40,10 @@ This file contains functions to:
 - Get disk usage.
 - Collect system performance information.
 
-* gui.py
+* ## gui.py
+
+![image](https://github.com/user-attachments/assets/c4d62ce3-b694-4d23-9260-e5b01975939e)
+
 
 This file creates a PyQt5 widget to display system performance information:
 
