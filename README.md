@@ -21,6 +21,11 @@
 * pywin32
 * WMI
 
+## If pywin32 will not install properly use: 
+
+## pip + [wheel](https://www.wheelodex.org/projects/pywin32/)
+
+
 ![image](https://github.com/user-attachments/assets/9f1fc300-e571-4bd0-b37e-e01937c12ee4)
 
 
