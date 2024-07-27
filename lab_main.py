@@ -57,3 +57,20 @@ print(f"  Всего: {ram_info['total']:.2f} ГБ")
 print(f"  Использовано: {ram_info['used']:.2f} ГБ")
 print(f"  Доступно: {ram_info['available']:.2f} ГБ")
 print(f"  Использовано: {ram_info['percent']}%")
+
+
+def get_running_processes():
+    processes = []
+    for proc in psutil.process_iter(['pid', 'name', 'status']):
+        try:
+            proc_info = proc.as_dict(attrs=['pid', 'name', 'status'])
+            processes.append(proc_info)
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            pass
+    return processes
+
+# Пример использования:
+process_list = get_running_processes()
+print("Запущенные процессы:")
+for proc in process_list:
+    print(f"  PID: {proc['pid']}, Имя: {proc['name']}, Статус: {proc['status']}")
