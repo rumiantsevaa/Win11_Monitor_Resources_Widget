@@ -39,3 +39,21 @@ print(f"  Всего: {swap_info['total']:.2f} ГБ")
 print(f"  Использовано: {swap_info['used']:.2f} ГБ")
 print(f"  Свободно: {swap_info['free']:.2f} ГБ")
 print(f"  Использовано: {swap_info['percent']}%")
+
+
+def get_ram_usage():
+    ram = psutil.virtual_memory()
+    return {
+        'total': ram.total / (1024 ** 3),
+        'used': ram.used / (1024 ** 3),
+        'available': ram.available / (1024 ** 3),
+        'percent': ram.percent
+    }
+
+# Пример использования:
+ram_info = get_ram_usage()
+print(f"Использование ОЗУ:")
+print(f"  Всего: {ram_info['total']:.2f} ГБ")
+print(f"  Использовано: {ram_info['used']:.2f} ГБ")
+print(f"  Доступно: {ram_info['available']:.2f} ГБ")
+print(f"  Использовано: {ram_info['percent']}%")
